@@ -29,7 +29,8 @@ To use Reqline, requests must follow a specific JSON structure.
 
 ### An Example should look like this
 
-```{
+```json
+{
   "reqline": "[HTTP GET | URL https://dummyjson.com/quotes/3 | QUERY {\"refid\": 1920933}]"
 }
 ```
