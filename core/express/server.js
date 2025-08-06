@@ -78,6 +78,11 @@ function Server(serverConfig = {}) {
     }
   });
 
+  // .
+  const reqlineRouter = require('../../reqline_module/router/reqlineRouter');
+
+  app.use('/', reqlineRouter);
+
   const handlerHelpers = {};
   handlerHelpers.http_statuses = expressEnums.HTTPStatusCode;
 
