@@ -31,6 +31,14 @@ To use Reqline, requests must follow a specific JSON structure.
 
 ```json
 {
+  "reqline": "HTTP GET | URL https://dummyjson.com/quotes/3 | QUERY {\"refid\": 1920933}"
+}
+```
+
+### Now some people might add the brackets, that's fine, you can proceed with that
+
+```json
+{
   "reqline": "[HTTP GET | URL https://dummyjson.com/quotes/3 | QUERY {\"refid\": 1920933}]"
 }
 ```
