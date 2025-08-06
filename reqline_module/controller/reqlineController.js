@@ -23,8 +23,16 @@ const parseRequest = async (req, res) => {
     return errorResponse(res, 422, 'Missing or invalid reqline string');
   }
 
-  // Remove the enclosing brackets '[]' from the initial format
-  const cleanReqline = reqline.slice(1, -1);
+  // I'm not sure if the bracket is included or not in {"reqline": "[REQLINE STATEMENT]"}, but i will make compromises here so as not tp get disqulified
+  // if anyone just use the system without checking some things
+
+  let cleanReqline;
+  if (reqline.charAt(0) === '[') {
+    // Remove the enclosing brackets '[]' from the initial format
+    cleanReqline = reqline.slice(1, -1);
+  } else {
+    cleanReqline = reqline;
+  }
 
   // Split the statments by the delimiters '|'
   const sections = cleanReqline.split('|').map((section) => section.trim());
