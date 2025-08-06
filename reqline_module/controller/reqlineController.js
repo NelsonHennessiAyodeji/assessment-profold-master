@@ -24,7 +24,7 @@ const parseRequest = async (req, res) => {
   }
 
   // Remove the enclosing brackets '[]' from the initial format
-  const cleanReqline = reqline.slice(2, -2);
+  const cleanReqline = reqline.slice(1, -1);
 
   // Split the statments by the delimiters '|'
   const sections = cleanReqline.split('|').map((section) => section.trim());
